@@ -1,13 +1,19 @@
 {
-  "name": "aig",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "start": "wrangler dev"
-  },
-  "devDependencies": {
-    "wrangler": "^3.0.0"
-  }
+	"name": "aig",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev"
+	},
+	"devDependencies": {
+		"wrangler": "^3.32.0"
+	},
+	"dependencies": {
+		"@anthropic-ai/sdk": "^0.17.1",
+		"@google/generative-ai": "^0.2.1",
+		"groq-sdk": "^0.3.2",
+		"openai": "^4.28.4"
+	}
 }
