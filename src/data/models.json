@@ -85,9 +85,9 @@
 			"status": "beta"
 		},
 		{
-			"id": "claude-3-kaiku-20240307",
+			"id": "claude-3-haiku-20240307",
 			"model": "claude-3-haiku-20240307",
-			"name": "Claude-3 Kaiku",
+			"name": "Claude-3 Haiku",
 			"provider": "anthropic",
 			"provider_name": "Anthropic",
 			"requires_better_ai": false,
