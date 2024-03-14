@@ -85,6 +85,17 @@
 			"status": "beta"
 		},
 		{
+			"id": "claude-3-kaiku-20240307",
+			"model": "claude-3-haiku-20240307",
+			"name": "Claude-3 Kaiku",
+			"provider": "anthropic",
+			"provider_name": "Anthropic",
+			"requires_better_ai": false,
+			"features": ["chat", "quick_ai", "commands", "api"],
+			"envs": ["ANTHROPIC_API_KEY"],
+			"status": "beta"
+		},
+		{
 			"id": "gemini-1.0-pro",
 			"model": "gemini-1.0-pro-latest",
 			"name": "Gemini 1.0 Pro",
