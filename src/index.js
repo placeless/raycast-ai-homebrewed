@@ -22,6 +22,12 @@ export default {
 	async fetch(req, env) {
 		const url = new URL(req.url);
 		const path = url.pathname;
+		const id = url.searchParams.get('uid');
+
+		if (id !== env.UID) {
+			return new Response('Forbidden.', { status: 403 });
+		}
+
 		let data;
 		let agent;
 		let response;
