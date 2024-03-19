@@ -4,6 +4,7 @@ const MODELS = {
 		quick_ai: 'gpt-35-turbo',
 		commands: 'gpt-35-turbo',
 		api: 'gpt-35-turbo',
+		emoji_search: 'gpt-35-turbo',
 		translate: 'claude-3-sonnet-20240229',
 	},
 	models: [
