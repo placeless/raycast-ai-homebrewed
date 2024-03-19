@@ -1,4 +1,5 @@
-import CONFIG from './data/models.json' assert { type: 'json' };
+import MODELS from './config/models.json' assert { type: 'json' };
+import ME from './config/me.json' assert { type: 'json' };
 import { RaycastAIData, TranslationData } from './utils/helpers';
 import dispatch from './utils/detour';
 
@@ -22,9 +23,9 @@ export default {
 	async fetch(req, env) {
 		const url = new URL(req.url);
 		const path = url.pathname;
-		const id = url.searchParams.get('uid');
+		const [defaultSearch, uid] = url.search.split('?uid=');
 
-		if (id !== env.UID) {
+		if (uid !== env.UID) {
 			return new Response('Forbidden.', { status: 403 });
 		}
 
@@ -34,12 +35,10 @@ export default {
 
 		switch (path) {
 			case '/api/v1/me':
-				// TODO: alter and download me.json
-				break;
+				return new Response(JSON.stringify(ME), { JSONResponseHeaders });
 
 			case '/api/v1/ai/models':
-				// TODO: easy way to setup models.json?
-				break;
+				return new Response(JSON.stringify(MODELS), { JSONResponseHeaders });
 
 			case '/api/v1/ai/chat_completions':
 				data = await RaycastAIData(req);
@@ -48,14 +47,27 @@ export default {
 				return new Response(response, { StreamResponseHeaders });
 
 			case '/api/v1/translations':
-				const model = CONFIG.models.find((item) => item.id === CONFIG.default_models.translate);
-				data = await TranslationData(req, model);
+				const models = MODELS.models.find((item) => item.id === MODELS.default_models.translate);
+				data = await TranslationData(req, models);
 				agent = dispatch(env, data);
 				response = await agent.onTranslation(data);
 				return new Response(JSON.stringify(response), { JSONResponseHeaders });
 
 			default:
-				break;
+				const baseUrl = 'https://backend.raycast.com';
+				const newHeaders = new Headers(req.headers);
+				newHeaders.set('host', new URL(baseUrl).host);
+
+				let newUrl = `${baseUrl}${path}${defaultSearch}`;
+				let reqInit = {
+					method: req.method,
+					body: req.body,
+					headers: newHeaders,
+					cf: {},
+				};
+
+				const newReq = new Request(newUrl, reqInit);
+				return fetch(newUrl.toString(), newReq);
 		}
 	},
 };
