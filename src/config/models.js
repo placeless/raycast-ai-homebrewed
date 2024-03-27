@@ -108,6 +108,15 @@ const MODELS = {
 			features: ['chat', 'quick_ai', 'commands', 'api'],
 		},
 		{
+			id: 'gemini-1.5-pro',
+			model: 'gemini-1.5-pro-latest',
+			name: 'Gemini 1.5 Pro',
+			provider: 'google',
+			provider_name: 'Google',
+			requires_better_ai: false,
+			features: ['chat', 'quick_ai', 'commands', 'api'],
+		},
+		{
 			id: 'moonshot-v1-8k',
 			model: 'moonshot-v1-8k',
 			name: 'Kimi 8K',

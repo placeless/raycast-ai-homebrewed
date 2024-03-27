@@ -4,7 +4,7 @@ class GoogleAIAgent {
 	constructor(env, data) {
 		this.opts = this.processData(data);
 		this.client = new GoogleGenerativeAI(env.GOOGLE_GAI_API_KEY);
-		this.model = this.client.getGenerativeModel({ model: data.model, generationConfig: this.opts });
+		this.model = this.client.getGenerativeModel({ model: data.model, generationConfig: this.opts }, { apiVersion: 'v1beta' });
 		// this.chat = this.model.startChat()
 	}
 

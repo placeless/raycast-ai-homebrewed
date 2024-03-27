@@ -118,6 +118,16 @@
 			"envs": ["GOOGLE_GEMINI_API_KEY"]
 		},
 		{
+			"id": "gemini-1.5-pro",
+			"model": "gemini-1.5-pro-latest",
+			"name": "Gemini 1.5 Pro",
+			"provider": "google",
+			"provider_name": "Google",
+			"requires_better_ai": false,
+			"features": ["chat", "quick_ai", "commands", "api"],
+			"envs": ["GOOGLE_GEMINI_API_KEY"]
+		},
+		{
 			"id": "moonshot-v1-8k",
 			"model": "moonshot-v1-8k",
 			"name": "Kimi 8K",
