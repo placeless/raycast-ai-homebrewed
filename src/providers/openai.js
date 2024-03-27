@@ -23,6 +23,11 @@ class OpenAIAgent {
 					apiKey: env.GROQ_API_KEY,
 					baseURL: 'https://api.groq.com/openai/v1',
 				});
+			case 'moonshot':
+				return new OpenAI({
+					apiKey: env.KIMI_API_KEY,
+					baseURL: 'https://api.moonshot.cn/v1',
+				});
 			default:
 				throw new Error('Unsupported provider specified');
 		}

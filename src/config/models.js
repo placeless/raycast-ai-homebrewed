@@ -107,6 +107,15 @@ const MODELS = {
 			requires_better_ai: false,
 			features: ['chat', 'quick_ai', 'commands', 'api'],
 		},
+		{
+			id: 'moonshot-v1-8k',
+			model: 'moonshot-v1-8k',
+			name: 'Kimi 8K',
+			provider: 'moonshot',
+			provider_name: 'Moonshot',
+			requires_better_ai: false,
+			features: ['chat', 'quick_ai', 'commands', 'api'],
+		},
 	],
 };
 

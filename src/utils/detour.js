@@ -7,6 +7,7 @@ function dispatch(env, data) {
 		case 'openai':
 		case 'azure':
 		case 'groq':
+		case 'moonshot':
 			return new OpenAIAgent(env, data);
 		case 'google':
 			return new GeminiAIAgent(env, data);
