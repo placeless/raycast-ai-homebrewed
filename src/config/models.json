@@ -64,6 +64,28 @@
 			"status": "beta"
 		},
 		{
+			"id": "llama3-70b-8192",
+			"model": "llama3-70b-8192",
+			"name": "LLaMA3-70b",
+			"provider": "groq",
+			"provider_name": "Groq",
+			"requires_better_ai": false,
+			"features": ["chat", "quick_ai", "commands", "api"],
+			"envs": ["GROQ_API_KEY"],
+			"status": "beta"
+		},
+		{
+			"id": "llama3-8b-8192",
+			"model": "llama3-8b-8192",
+			"name": "LLaMA3-8b",
+			"provider": "groq",
+			"provider_name": "Groq",
+			"requires_better_ai": false,
+			"features": ["chat", "quick_ai", "commands", "api"],
+			"envs": ["GROQ_API_KEY"],
+			"status": "beta"
+		},
+		{
 			"id": "gemma-7b-it",
 			"model": "gemma-7b-it",
 			"name": "Gemma-7b-it",
